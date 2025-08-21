@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sacculus – Liens Officiels</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      max-width: 400px;
+    }
+    a {
+      text-decoration: none;
+      padding: 15px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    a:hover {
+      transform: scale(1.05);
+    }
+    .tiktok { background: #010101; color: #fff; border: 2px solid #ff0050; }
+    .youtube { background: #ff0000; color: #fff; }
+    .facebook { background: #1877f2; color: #fff; }
+    .soundcloud { background: #ff7700; color: #fff; }
+  </style>
+</head>
+<body>
+  <h1>Sacculus</h1>
+  <div class="links">
+    <a class="tiktok" href="tiktok://user?username=sacculus_cashout" target="_blank"
+       onclick="fallback(this, 'https://www.tiktok.com/@sacculus_cashout')">TikTok</a>
+    <a class="youtube" href="youtube://www.youtube.com/@Sacculus_Cashout" target="_blank"
+       onclick="fallback(this, 'https://www.youtube.com/@Sacculus_Cashout')">YouTube</a>
+    <a class="facebook" href="fb://page/113363608257686" target="_blank"
+       onclick="fallback(this, 'https://www.facebook.com/sacculus.cashout/')">Facebook</a>
+    <a class="soundcloud" href="soundcloud://users:102521" target="_blank"
+       onclick="fallback(this, 'https://soundcloud.com/sacculus')">SoundCloud</a>
+  </div>
+
+  <script>
+    function fallback(el, url) {
+      setTimeout(() => {
+        window.location.href = url;
+      }, 800);
+    }
+  </script>
+</body>
+</html>
