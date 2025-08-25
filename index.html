@@ -18,10 +18,17 @@ height: 150px;
 border-radius: 50%;
 object-fit: cover;
 margin-bottom: 20px;
-box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+box-shadow: 0 0 20px #FF00FF, 0 0 40px #00FF00;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+.avatar:hover {
+transform: scale(1.05) rotate(5deg);
+box-shadow: 0 0 30px #FF00FF, 0 0 60px #00FF00;
 }
 h1 {
 margin-bottom: 30px;
+color: #FF00FF;
+text-shadow: 0 0 10px #FF00FF, 0 0 20px #00FF00;
 }
 .links {
 display: flex;
@@ -41,20 +48,23 @@ font-size: 18px;
 font-weight: bold;
 color: #fff;
 text-decoration: none;
-transition: transform 0.2s, box-shadow 0.2s;
+background: linear-gradient(45deg, #00FF00, #FF00FF);
+box-shadow: 0 0 10px #00FF00, 0 0 20px #FF00FF;
+transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
 }
 .links a:hover {
 transform: scale(1.05);
-box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+box-shadow: 0 0 20px #FF00FF, 0 0 40px #00FF00;
+background: linear-gradient(45deg, #FF00FF, #00FF00);
 }
-.links a.youtube { background: #FF0000; }
-.links a.spotify { background: #1DB954; }
-.links a.tiktok { background: #010101; }
-.links a.facebook { background: #1877F2; }
-.links a.soundcloud { background: #FF5500; }
-.links img.icon {
+.links svg.icon {
 width: 24px;
 height: 24px;
+fill: white;
+transition: transform 0.3s;
+}
+.links a:hover svg.icon {
+transform: scale(1.2) rotate(15deg);
 }
 </style>
 </head>
@@ -65,20 +75,32 @@ height: 24px;
 
 <div class="links">
 <a class="youtube" href="https://www.youtube.com/@Sacculus_Cashout" target="_blank">
-<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" class="icon" alt="YouTube"> YouTube
+<svg class="icon" viewBox="0 0 24 24"><path d="M23.5 6.2s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.3-1C16.9 2.5 12 2.5 12 2.5h-.1s-4.9 0-8.3.4c-.4 0-1.4.1-2.3 1-.7.7-.9 2.3-.9 2.3S0 8.1 0 10v1.9c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2.1.9 2.6 1 1.9.2 8.3.4 8.3.4s4.9 0 8.3-.4c.4 0 1.4-.1 2.3-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V10c0-1.9-.2-3.8-.2-3.8zM9.5 14.5V7.5l6.5 3.5-6.5 3.5z"/></svg>
+YouTube
 </a>
 <a class="spotify" href="spotify:artist:4h0CkN2y6KcaTcFCVr5ft5" onclick="fallback(this, 'https://open.spotify.com/artist/4h0CkN2y6KcaTcFCVr5ft5')">
-<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" class="icon" alt="Spotify"> Spotify
+<svg class="icon" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12c0 6.7 5.4 12 12 12s12-5.3 12-12C24 5.4 18.6 0 12 0zm5.5 17.5c-.2.3-.6.4-.9.2-2.5-1.5-5.6-1.8-9.2-.8-.3.1-.7-.1-.8-.4-.1-.3.1-.7.4-.8 3.9-1.1 7.4-.7 10.3.9.3.1.4.5.2.9zm1.3-2.9c-.2.3-.6.5-.9.3-2.9-1.7-7.3-2.2-10.7-1-.3.1-.7-.1-.8-.5-.1-.3.1-.7.5-.8 3.9-1.3 8.7-.8 12 1.1.2.1.3.5-.1.9zm.1-3c-3.5-2.1-9.2-2.3-12.5-1.1-.4.1-.8-.1-.9-.5s.1-.8.5-.9c3.7-1.3 9.9-1.1 13.9 1.3.3.2.4.6.2 1-.2.2-.6.3-1 .2z"/></svg>
+Spotify
 </a>
 <a class="tiktok" href="https://www.tiktok.com/@sacculus_cashout" target="_blank">
-<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" class="icon" alt="TikTok"> TikTok
+<svg class="icon" viewBox="0 0 24 24"><path d="M12 0h3v12h4v3h-7V0zm-3 5a4 4 0 0 0-4 4c0 2.21 1.79 4 4 4a4 4 0 0 0 4-4h-2a2 2 0 1 1-2-2z"/></svg>
+TikTok
 </a>
 <a class="facebook" href="https://www.facebook.com/profile.php?id=113363608257686" target="_blank">
-<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="icon" alt="Facebook"> Facebook
+<svg class="icon" viewBox="0 0 24 24"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.2 8.5 9.9v-7h-2.6v-2.9h2.6V9.8c0-2.6 1.5-4.1 3.9-4.1 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6v1.9h2.8l-.4 2.9h-2.4v7C18.3 21.2 22 17 22 12z"/></svg>
+Facebook
 </a>
 <a class="soundcloud" href="https://soundcloud.com/sacculus" target="_blank">
-<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/soundcloud.svg" class="icon" alt="SoundCloud"> SoundCloud
+<svg class="icon" viewBox="0 0 24 24"><path d="M17.5 9.4c-.6 0-1.2.1-1.7.3-.4-2.4-2.5-4.2-5-4.2-1.2 0-2.3.4-3.2 1.1-.6.5-1 1.2-1.2 2-.3-.1-.6-.2-1-.2-1.7 0-3.1 1.4-3.1 3.1 0 .1 0 .2.1.3C1.3 12 0 13.6 0 15.5c0 2.2 1.8 4 4 4h13.5c2.1 0 3.8-1.7 3.8-3.8 0-2.1-1.7-3.7-3.8-3.7z"/></svg>
+SoundCloud
 </a>
 </div>
+
+
+<script>
+function fallback(el, url) {
+setTimeout(function(){ window.location.href = url; }, 25);
+}
+</script>
 </body>
 </html>
