@@ -1,79 +1,84 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sacculus - Liens Officiels</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sacculus Links</title>
 <style>
 body {
-font-family: Arial, sans-serif;
-background: #0d0d0d;
+background: #0f0f0f;
 color: #fff;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-min-height: 100vh;
-margin: 0;
+font-family: Arial, sans-serif;
+text-align: center;
 padding: 20px;
 }
+.avatar {
+width: 150px;
+height: 150px;
+border-radius: 50%;
+object-fit: cover;
+margin-bottom: 20px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
 h1 {
-font-size: 2.5rem;
 margin-bottom: 30px;
 }
 .links {
 display: flex;
 flex-direction: column;
-gap: 20px;
-width: 100%;
-max-width: 400px;
+gap: 15px;
+max-width: 300px;
+margin: auto;
 }
-a {
-text-decoration: none;
+.links a {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
 padding: 15px;
 border-radius: 12px;
-font-size: 1.2rem;
+font-size: 18px;
 font-weight: bold;
-text-align: center;
-transition: transform 0.2s ease;
+color: #fff;
+text-decoration: none;
+transition: transform 0.2s, box-shadow 0.2s;
 }
-a:hover {
+.links a:hover {
 transform: scale(1.05);
+box-shadow: 0 4px 15px rgba(0,0,0,0.6);
 }
-.tiktok { background: #010101; color: #fff; border: 2px solid #ff0050; }
-.youtube { background: #ff0000; color: #fff; }
-.facebook { background: #1877f2; color: #fff; }
-.soundcloud { background: #ff7700; color: #fff; }
+.links a.youtube { background: #FF0000; }
 .links a.spotify { background: #1DB954; }
+.links a.tiktok { background: #010101; }
+.links a.facebook { background: #1877F2; }
+.links a.soundcloud { background: #FF5500; }
+.links img.icon {
+width: 24px;
+height: 24px;
+}
 </style>
 </head>
 <body>
+<img src="avatar.png" alt="Sacculus Avatar" class="avatar">
 <h1>Sacculus</h1>
+
+
 <div class="links">
-<a class="tiktok" href="tiktok://user?username=Sacculus" target="_blank" onclick="fallback(this, 'https://www.tiktok.com/@Sacculus')">TikTok</a>
-<a class="youtube" href="youtube://www.youtube.com/@Sacculus_Cashout" target="_blank" onclick="fallback(this, 'https://www.youtube.com/@Sacculus_Cashout')">YouTube</a>
-<a class="spotify"
-href="spotify:artist:4h0CkN2y6KcaTcFCVr5ft5"
-onclick="fallback(this, 'https://open.spotify.com/artist/4h0CkN2y6KcaTcFCVr5ft5')">
-Spotify
+<a class="youtube" href="https://www.youtube.com/@Sacculus_Cashout" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" class="icon" alt="YouTube"> YouTube
 </a>
-
-
-$1
-<a class="soundcloud"
-href="https://soundcloud.com/sacculus" target="_blank">
-SoundCloud
+<a class="spotify" href="spotify:artist:4h0CkN2y6KcaTcFCVr5ft5" onclick="fallback(this, 'https://open.spotify.com/artist/4h0CkN2y6KcaTcFCVr5ft5')">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/spotify.svg" class="icon" alt="Spotify"> Spotify
+</a>
+<a class="tiktok" href="https://www.tiktok.com/@sacculus_cashout" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" class="icon" alt="TikTok"> TikTok
+</a>
+<a class="facebook" href="https://www.facebook.com/profile.php?id=113363608257686" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" class="icon" alt="Facebook"> Facebook
+</a>
+<a class="soundcloud" href="https://soundcloud.com/sacculus" target="_blank">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/soundcloud.svg" class="icon" alt="SoundCloud"> SoundCloud
 </a>
 </div>
-
-
-<script>
-// Fonction fallback: si l'app n'est pas installée → ouvre le lien web
-function fallback(el, url) {
-setTimeout(() => {
-window.location.href = url;
-}, 800);
-}
-</script>
 </body>
 </html>
