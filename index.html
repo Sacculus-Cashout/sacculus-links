@@ -1,108 +1,79 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sacculus Links</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f0f0f, #1a1a40);
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 20px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 0 30px rgba(0,0,0,0.5);
-      width: 90%;
-      max-width: 400px;
-    }
-
-    .avatar {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      border: 3px solid #fff;
-    }
-
-    h1 {
-      margin: 0.5rem 0 1.5rem;
-      font-size: 1.8rem;
-      letter-spacing: 2px;
-    }
-
-    .links a {
-      display: block;
-      margin: 10px 0;
-      padding: 12px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      color: #fff;
-    }
-
-    .links a.tiktok { background: #010101; }
-    .links a.youtube { background: #ff0000; }
-    .links a.soundcloud { background: #ff7700; }
-    .links a.facebook { background: #1877f2; }
-
-    .links a:hover {
-      transform: scale(1.05);
-      opacity: 0.9;
-    }
-  </style>
-  <script>
-    function fallback(el, url) {
-      setTimeout(function () {
-        window.location.href = url;
-      }, 500);
-    }
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sacculus - Liens Officiels</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background: #0d0d0d;
+color: #fff;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+margin: 0;
+padding: 20px;
+}
+h1 {
+font-size: 2.5rem;
+margin-bottom: 30px;
+}
+.links {
+display: flex;
+flex-direction: column;
+gap: 20px;
+width: 100%;
+max-width: 400px;
+}
+a {
+text-decoration: none;
+padding: 15px;
+border-radius: 12px;
+font-size: 1.2rem;
+font-weight: bold;
+text-align: center;
+transition: transform 0.2s ease;
+}
+a:hover {
+transform: scale(1.05);
+}
+.tiktok { background: #010101; color: #fff; border: 2px solid #ff0050; }
+.youtube { background: #ff0000; color: #fff; }
+.facebook { background: #1877f2; color: #fff; }
+.soundcloud { background: #ff7700; color: #fff; }
+.links a.spotify { background: #1DB954; }
+</style>
 </head>
 <body>
-  <div class="card">
-    <img src="avatar.jpg" alt="Sacculus Avatar" class="avatar">
-    <h1>Sacculus</h1>
-    <div class="links">
-      <!-- TikTok -->
-      <a class="tiktok" 
-         href="snssdk1180://user/profile/7270106347430760453" 
-         onclick="fallback(this, 'https://www.tiktok.com/@sacculus_cashout')">
-         TikTok
-      </a>
+<h1>Sacculus</h1>
+<div class="links">
+<a class="tiktok" href="tiktok://user?username=Sacculus" target="_blank" onclick="fallback(this, 'https://www.tiktok.com/@Sacculus')">TikTok</a>
+<a class="youtube" href="youtube://www.youtube.com/@Sacculus_Cashout" target="_blank" onclick="fallback(this, 'https://www.youtube.com/@Sacculus_Cashout')">YouTube</a>
+<a class="spotify"
+href="spotify:artist:4h0CkN2y6KcaTcFCVr5ft5"
+onclick="fallback(this, 'https://open.spotify.com/artist/4h0CkN2y6KcaTcFCVr5ft5')">
+Spotify
+</a>
 
-      <!-- YouTube -->
-      <a class="youtube" 
-         href="vnd.youtube://www.youtube.com/@Sacculus" 
-         onclick="fallback(this, 'https://www.youtube.com/@Sacculus')">
-         YouTube
-      </a>
 
-      <!-- SoundCloud -->
-      <a class="soundcloud" 
-         href="soundcloud://users:102521" 
-         onclick="fallback(this, 'https://soundcloud.com/sacculus')">
-         SoundCloud
-      </a>
+$1
+<a class="soundcloud"
+href="https://soundcloud.com/sacculus" target="_blank">
+SoundCloud
+</a>
+</div>
 
-      <!-- Facebook -->
-      <a class="facebook" 
-         href="fb://page/113363608257686" 
-         onclick="fallback(this, 'https://www.facebook.com/sacculus.cashout/')">
-         Facebook
-      </a>
-    </div>
-  </div>
+
+<script>
+// Fonction fallback: si l'app n'est pas installée → ouvre le lien web
+function fallback(el, url) {
+setTimeout(() => {
+window.location.href = url;
+}, 800);
+}
+</script>
 </body>
 </html>
